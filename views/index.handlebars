@@ -9,3 +9,25 @@
 
   <button type="submit">BURGER!</button>
 </form>
+
+<h1>Burger Town!</h1>
+
+<h2>Burgers To Crush!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devoured=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Crushed Burgers!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=false}}
+    {{/if}}
+  {{/each}}
+</ul>
