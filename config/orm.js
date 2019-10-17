@@ -39,8 +39,7 @@ function objToSql(ob) {
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
-      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-      // e.g. {sleepy: true} => ["sleepy=true"]
+
       arr.push(key + "=" + value);
     }
   }
@@ -51,7 +50,7 @@ function objToSql(ob) {
 
 // Object for all our SQL statement functions.
 var orm = {
-  selectall: function(tableInput, cb) {
+  selectAll: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
       if (err) {
@@ -80,7 +79,7 @@ var orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
+  
   updateOne: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
@@ -113,5 +112,5 @@ var orm = {
   }
 };
 
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model (burger.js).
 module.exports = orm;
