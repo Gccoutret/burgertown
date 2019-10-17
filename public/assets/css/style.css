@@ -1,0 +1,24 @@
+body{
+  margin: 0auto;
+}
+.jumbotron{
+  text-align: center;
+  margin: 0auto;
+}
+.eaten{
+  margin: 0auto;
+  /* float: left; */
+ 
+}
+.not-eaten{
+  margin:0auto;
+  /* float: left; */
+  
+}
+
+.burgerform{
+  margin:0auto;
+}
+.burgertown{
+  text-align: center;
+}

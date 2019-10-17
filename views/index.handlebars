@@ -1,45 +1,64 @@
-<h2>BURGER!</h2>
 
+<div class="jumbotron">
+  <h1 class="display-4">BURGER TOWN, BABY!</h1>
+  <p class="lead"></p>
+  <hr class="my-4">
+  <p>NOT TO BE CONFUSED WITH FLAVOR TOWN... NO BLEACHED TIPS HERE</p>
+  
+</div>
+<div class="container burgerform">
 <form class="create-form">
 
   <div class="form-group">
-    <label for="auth">burger_name:</label>
-    <input type="text" id="auth" name="burger_name">
+    <label for="auth">What Burger Do You Fancy?</label>
+    <input type="text" class="form-control" id="auth" name="burger_name">
   </div>
 
   <div class="form-group">
-    <label for="devoured">Eaten?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+    <label for="devoured"></label>
+    <input type="radio" name="devoured" value="1" checked>Devoured!<br>
     <input type="radio" name="devoured" value="0"> EAT ME!
   </div>
 
-  <button type="submit">Create Burger!</button>
+  <button type="submit" class="btn btn-primary">Create Burger!</button>
 </form>
+</div>
+  <div class="container burgertown">
+  <h1>Burger Town!</h1>
+  <br>
+  <br>
+  <br>
+  </div>
+<div class="container">
+<div class="row">
+  <div class="col-md-6">
+  <div class="not-eaten">
+    <h2>Burgers To Crush!</h2>
 
-<h1>Burger Town!</h1>
+      <ul>
+        {{#each burgers}}
+          {{#unless devoured}}
+            {{>burger-block devoured=true}}
+          {{/unless}}
+        {{/each}}
+      </ul>
+</div>
+</div>
+<div class="col-md-6">
+<div class="eaten">
+  <h2>Crushed Burgers!</h2>
 
-<h2>Burgers To Crush!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{>burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Crushed Burgers!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{>burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-
-
+  <ul>
+    {{#each burgers}}
+      {{#if devoured}}
+        {{>burger-block devoured=false}}
+      {{/if}}
+    {{/each}}
+  </ul>
+  </div>
+</div>
+</div>
+</div>
 
 
 <script>
